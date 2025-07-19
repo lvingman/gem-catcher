@@ -15,6 +15,10 @@ run/main_scene="uid://cl6xl83al6ijf"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalValues="*res://Scripts/Globals/GlobalValues.cs"
+
 [dotnet]
 
 project/assembly_name="Gem Catcher"
