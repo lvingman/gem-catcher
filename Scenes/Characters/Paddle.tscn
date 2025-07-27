@@ -9,8 +9,6 @@ height = 102.0
 
 [node name="Paddle" type="CharacterBody2D"]
 script = ExtResource("1_g3s6r")
-_speed = 70.0
-_margin = 60.045
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

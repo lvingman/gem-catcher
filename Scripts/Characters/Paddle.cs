@@ -18,22 +18,16 @@ public partial class Paddle : CharacterBody2D
     }
     private void MoveCharacter(double delta)
     {
-        if (IsMovingLeft())
-        {
-            Position -= new Vector2(_speed * (float)delta, 0);
-        }
-        else if (IsMovingRight())
-        {
-            Position += new Vector2(_speed * (float)delta, 0);
-        }
+        Vector2 movement = new Vector2(Convert.ToInt32(ShouldMoveRight()) - Convert.ToInt32(ShouldMoveLeft()), 0);
+        Position += movement * _speed * (float)delta;
     }
 
-    private bool IsMovingRight()
+    private bool ShouldMoveRight()
     {
         return Input.IsActionPressed(InputMap.MOVE_RIGHT) && !(IsOnRightBounds());
     }
 
-    private bool IsMovingLeft()
+    private bool ShouldMoveLeft()
     {
         return Input.IsActionPressed(InputMap.MOVE_LEFT) && !(IsOnLeftBounds());
     }
@@ -47,5 +41,4 @@ public partial class Paddle : CharacterBody2D
     {
         return Position.X <= GlobalValues.Instance.GetViewportStart().X + _margin;
     }
-    
 }
