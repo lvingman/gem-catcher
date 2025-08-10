@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvd12sxu7jrw5"]
 
 [ext_resource type="Texture2D" uid="uid://blqicamh76xvq" path="res://Assets/element_red_diamond.png" id="1_eifpq"]
-[ext_resource type="Script" uid="uid://qetvqjmd30aq" path="res://Scripts/Objects/Gem.cs" id="1_te56g"]
+[ext_resource type="Script" uid="uid://qetvqjmd30aq" path="res://Scripts/InstantiableObjects/Objects/Gem.cs" id="1_te56g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eifpq"]
 radius = 15.2643

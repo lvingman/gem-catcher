@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://i3mo48447twj"]
 
-[ext_resource type="Script" uid="uid://dp31aw4nqq3gm" path="res://Scripts/Characters/Paddle.cs" id="1_g3s6r"]
+[ext_resource type="Script" uid="uid://dp31aw4nqq3gm" path="res://Scripts/InstantiableObjects/Characters/Paddle.cs" id="1_g3s6r"]
 [ext_resource type="Texture2D" uid="uid://dq4cf8wie1duc" path="res://Assets/paddleBlu.png" id="1_r5bw3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ke8x"]
