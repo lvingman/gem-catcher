@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg1mob5i0nrs3"]
+
+[ext_resource type="Script" uid="uid://sxun1ox6hblp" path="res://Scripts/UI/GameOver.cs" id="1_n002h"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n002h")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -62.0
+offset_right = 82.5
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="GameOver" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+   GAME OVER   "
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "   Score: ---   "
+horizontal_alignment = 1
+
+[node name="TryAgain" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Click to Try Again"

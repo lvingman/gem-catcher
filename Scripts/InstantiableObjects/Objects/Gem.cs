@@ -8,7 +8,7 @@ public partial class Gem : Area2D
 	[Export] private float _initialSpeed = 30.0f;
 	public override void _Ready()
 	{
-		_initialSpeed *= 10;
+		_initialSpeed *= (10 + GlobalValues.Instance.GetIncreasingGemSpeed());
 		ConnectSignals();
 	}
 
@@ -36,5 +36,4 @@ public partial class Gem : Area2D
 	{
 		BodyEntered += OnBodyEntered;
 	}
-
 }

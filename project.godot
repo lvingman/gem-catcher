@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalValues="*res://Scripts/Globals/GlobalValues.cs"
 SignalManager="*res://Scripts/Globals/SignalManager.cs"
+GlobalValues="*res://Scripts/Globals/GlobalValues.cs"
 Score="*res://Scripts/Globals/Score.cs"
 
 [dotnet]
