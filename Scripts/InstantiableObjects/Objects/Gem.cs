@@ -32,8 +32,19 @@ public partial class Gem : Area2D
 		}
 	}
 
+	private void OnAreaExited(Area2D area)
+	{
+		if (area.GetName() == "GameOverArea")
+		{
+			GD.Print("Game over");
+			SignalManager.Instance.EmitSignal(SignalManager.SignalName.OnGameOver);
+			SetProcess(false);
+		}
+	}
+
 	private void ConnectSignals()
 	{
 		BodyEntered += OnBodyEntered;
+		AreaExited += OnAreaExited;
 	}
 }

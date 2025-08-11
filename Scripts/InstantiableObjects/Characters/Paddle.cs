@@ -1,6 +1,8 @@
 using Godot;
 using System;
+using GemCatcher.Scripts;
 using GemCatcher.Scripts.Globals;
+using GemCatcher.Scripts.Globals.Enums;
 using InputMap = GemCatcher.Scripts.Globals.InputMap;
 
 public partial class Paddle : CharacterBody2D
@@ -10,6 +12,7 @@ public partial class Paddle : CharacterBody2D
     public override void _Ready()
     {
         _speed *= 10;
+        ConnectSignals();
     }
 
     public override void _Process(double delta)
@@ -40,5 +43,14 @@ public partial class Paddle : CharacterBody2D
     private bool IsOnLeftBounds()
     {
         return Position.X <= GlobalValues.Instance.GetViewportStart().X + _margin;
+    }
+
+    private void OnGameOver()
+    {
+        _speed = 0;
+    }
+    private void ConnectSignals()
+    {
+        SignalManager.Instance.ConnectSignalToFunction(OnGameOver, signals.ON_GAME_OVER);
     }
 }

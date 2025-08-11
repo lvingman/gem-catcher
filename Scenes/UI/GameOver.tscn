@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://sxun1ox6hblp" path="res://Scripts/UI/GameOver.cs" id="1_n002h"]
 
-[node name="GameOver" type="Control"]
+[node name="GameOver" type="Control" node_paths=PackedStringArray("_scoreLabel", "_tryAgainButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +10,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n002h")
+_scoreLabel = NodePath("PanelContainer/VBoxContainer/Score")
+_tryAgainButton = NodePath("PanelContainer/VBoxContainer/TryAgain")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

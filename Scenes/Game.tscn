@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl6xl83al6ijf"]
+[gd_scene load_steps=11 format=3 uid="uid://cl6xl83al6ijf"]
 
 [ext_resource type="Texture2D" uid="uid://bmtdnlkemdf3x" path="res://Assets/GameBg.png" id="1_gl6un"]
 [ext_resource type="PackedScene" uid="uid://i3mo48447twj" path="res://Scenes/Characters/Paddle.tscn" id="2_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://dvd12sxu7jrw5" path="res://Scenes/Items/Gem.tscn" id="3_j5yw3"]
 [ext_resource type="Script" uid="uid://bnucsa67klagk" path="res://Scripts/Spawner.cs" id="4_kldst"]
 [ext_resource type="Texture2D" uid="uid://cy8nr038ag8mp" path="res://icon.svg" id="5_b2bpf"]
+[ext_resource type="PackedScene" uid="uid://cg1mob5i0nrs3" path="res://Scenes/UI/GameOver.tscn" id="6_7lihs"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b2bpf"]
+b = Vector2(-1151, 0)
 
 [sub_resource type="Animation" id="Animation_b2bpf"]
 resource_name = "moving"
@@ -55,6 +59,12 @@ position = Vector2(584, 320)
 scale = Vector2(0.63, 0.63)
 texture = ExtResource("1_gl6un")
 
+[node name="GameOverArea" type="Area2D" parent="Assets"]
+position = Vector2(1151, 649)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Assets/GameOverArea"]
+shape = SubResource("SegmentShape2D_b2bpf")
+
 [node name="Characters" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
@@ -62,7 +72,7 @@ metadata/_edit_lock_ = true
 position = Vector2(562, 597)
 
 [node name="Gem" parent="Characters" instance=ExtResource("3_j5yw3")]
-position = Vector2(387, 268)
+position = Vector2(558, 306)
 
 [node name="Spawner" type="Node2D" parent="Characters"]
 position = Vector2(607, -79)
@@ -79,3 +89,8 @@ autoplay = "RESET"
 [node name="Sprite2D" type="Sprite2D" parent="Characters/Spawner"]
 texture = ExtResource("5_b2bpf")
 metadata/_edit_lock_ = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GameOver" parent="UI" instance=ExtResource("6_7lihs")]
+visible = false
