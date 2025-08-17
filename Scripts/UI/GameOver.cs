@@ -34,6 +34,7 @@ public partial class GameOver : Control
     }
     private void OnTryAgainButtonPressed()
     {
+        SignalManager.Instance.EmitSignal(signals.ON_SCENE_RELOAD);
         GetTree().ReloadCurrentScene();
     }
 }

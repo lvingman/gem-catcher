@@ -9,6 +9,7 @@ public partial class SignalManager : Node
 {
     [Signal] public delegate void OnGameOverEventHandler();
     [Signal] public delegate void OnScoreEventHandler();
+    [Signal] public delegate void OnSceneReloadEventHandler();
     public static SignalManager Instance { get; private set; }
     public override void _Ready()
     {
@@ -25,6 +26,9 @@ public partial class SignalManager : Node
                 break;
             case signals.ON_GAME_OVER:
                 Connect(SignalName.OnGameOver, callableFunction);
+                break;
+            case signals.ON_SCENE_RELOAD:
+                Connect(SignalName.OnSceneReload, callableFunction);
                 break;
             default:
                 GD.Print("Signal not set up at ConnectSignalToFunction");

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqimfhhrtxppe"]
+
+[ext_resource type="AudioStream" uid="uid://c2nrnd1ux7mp2" path="res://Assets/bgm_action_5.mp3" id="1_i4dsl"]
+[ext_resource type="Script" uid="uid://vjf7c3ghjmlj" path="res://Scripts/Autoload/AudioManager.cs" id="1_iaeb6"]
+[ext_resource type="AudioStream" uid="uid://yal6l4e7oi5n" path="res://Assets/spell1_0.wav" id="2_iaeb6"]
+[ext_resource type="AudioStream" uid="uid://cgk05s18u8c" path="res://Assets/explode.wav" id="3_j5hgx"]
+
+[node name="AudioManager" type="Node" node_paths=PackedStringArray("Music", "SFX")]
+script = ExtResource("1_iaeb6")
+Music = NodePath("Music")
+SFX = NodePath("SFX")
+
+[node name="Music" type="Node" parent="."]
+
+[node name="MainTheme" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("1_i4dsl")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="GemCaught" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("2_iaeb6")
+
+[node name="GameOver" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("3_j5hgx")

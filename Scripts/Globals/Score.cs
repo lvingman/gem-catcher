@@ -14,18 +14,25 @@ public partial class Score : Node
         ConnectSignals();
     }
 
-    public void AddScore()
+    private void AddScore()
     {
         _score += 100;
         GD.Print("Score after signal: " + _score);
     }
+    
+    
     
     public int GetScore() => _score;
 
     private void ConnectSignals()
     {
         SignalManager.Instance.ConnectSignalToFunction(AddScore, signals.ON_SCORE);
+        SignalManager.Instance.ConnectSignalToFunction(OnSceneReload, signals.ON_SCENE_RELOAD);
     }
-    
+
+    private void OnSceneReload()
+    {
+        _score = 0;
+    }
 
 }

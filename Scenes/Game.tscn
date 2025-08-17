@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cl6xl83al6ijf"]
+[gd_scene load_steps=12 format=3 uid="uid://cl6xl83al6ijf"]
 
 [ext_resource type="Texture2D" uid="uid://bmtdnlkemdf3x" path="res://Assets/GameBg.png" id="1_gl6un"]
 [ext_resource type="PackedScene" uid="uid://i3mo48447twj" path="res://Scenes/Characters/Paddle.tscn" id="2_j5yw3"]
@@ -6,9 +6,26 @@
 [ext_resource type="Script" uid="uid://bnucsa67klagk" path="res://Scripts/Spawner.cs" id="4_kldst"]
 [ext_resource type="Texture2D" uid="uid://cy8nr038ag8mp" path="res://icon.svg" id="5_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://cg1mob5i0nrs3" path="res://Scenes/UI/GameOver.tscn" id="6_7lihs"]
+[ext_resource type="Script" uid="uid://bxp6mndm0sder" path="res://Scripts/UI/ScoreLabel.cs" id="7_fgofq"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_b2bpf"]
 b = Vector2(-1151, 0)
+
+[sub_resource type="Animation" id="Animation_7lihs"]
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/Spawner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(607, -79), Vector2(1075, -79), Vector2(607, -79), Vector2(83, -79), Vector2(607, -79)]
+}
 
 [sub_resource type="Animation" id="Animation_b2bpf"]
 resource_name = "moving"
@@ -25,22 +42,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(554, 100), Vector2(1090, 100), Vector2(554, 100), Vector2(97, 100), Vector2(554, 100)]
-}
-
-[sub_resource type="Animation" id="Animation_7lihs"]
-length = 8.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Characters/Spawner:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4, 6, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(607, -79), Vector2(1075, -79), Vector2(607, -79), Vector2(83, -79), Vector2(607, -79)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fgofq"]
@@ -94,3 +95,11 @@ metadata/_edit_lock_ = true
 
 [node name="GameOver" parent="UI" instance=ExtResource("6_7lihs")]
 visible = false
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_left = 59.0
+offset_top = 42.0
+offset_right = 115.0
+offset_bottom = 65.0
+text = "SCORE: 0"
+script = ExtResource("7_fgofq")
