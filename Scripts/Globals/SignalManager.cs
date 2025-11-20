@@ -18,38 +18,34 @@ public partial class SignalManager : Node
 
     public void ConnectToGameOverSignal(Action connectingCode)
     {
-        try
-        {
-            Callable function = Callable.From(connectingCode);
-            Connect(SignalName.OnGameOver, function);
-        }
-        catch (Exception e)
-        {
-            GD.Print("Couldn't associate code to Game Over signal");
-        }
+        ConnectSignalToFunction(connectingCode, signals.ON_GAME_OVER);
     }
     public void ConnectToScoreSignal(Action connectingCode)
     {
-        try
-        {
-            Callable function = Callable.From(connectingCode);
-            Connect(SignalName.OnScore, function);
-        }
-        catch (Exception e)
-        {
-            GD.Print("Couldn't associate code to Score signal");
-        }
+        ConnectSignalToFunction(connectingCode, signals.ON_SCORE);
     }
     public void ConnectToSceneReloadSignal(Action connectingCode)
     {
-        try
+        ConnectSignalToFunction(connectingCode, signals.ON_SCENE_RELOAD);
+    }
+
+    private void ConnectSignalToFunction(Action functionToConnect, string signalName)
+    {
+        var callableFunction = Callable.From(functionToConnect);
+        switch (signalName)
         {
-            Callable function = Callable.From(connectingCode);
-            Connect(SignalName.OnSceneReload, function);
-        }
-        catch (Exception e)
-        {
-            GD.Print("Couldn't associate code to Scene Reload signal");
+            case signals.ON_SCORE:
+                Connect(SignalName.OnScore, callableFunction);
+                break;
+            case signals.ON_GAME_OVER:
+                Connect(SignalName.OnGameOver, callableFunction);
+                break;
+            case signals.ON_SCENE_RELOAD:
+                Connect(SignalName.OnSceneReload, callableFunction);
+                break;
+            default:
+                GD.Print("Signal not set up at ConnectSignalToFunction");
+                break;
         }
     }
 }
