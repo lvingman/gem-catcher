@@ -51,6 +51,6 @@ public partial class Paddle : CharacterBody2D
     }
     private void ConnectSignals()
     {
-        SignalManager.Instance.ConnectSignalToFunction(OnGameOver, signals.ON_GAME_OVER);
+        SignalManager.Instance.ConnectToGameOverSignal(OnGameOver);
     }
 }

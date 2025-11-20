@@ -22,6 +22,10 @@ GlobalValues="*res://Scripts/Globals/GlobalValues.cs"
 Score="*res://Scripts/Globals/Score.cs"
 AudioManager="*res://Scenes/Autoload/AudioManager.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="Gem Catcher"

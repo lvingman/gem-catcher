@@ -39,9 +39,9 @@ public partial class AudioManager : Node
     }
     private void ConnectSignals()
     {
-        SignalManager.Instance.ConnectSignalToFunction(OnGameOver, signals.ON_GAME_OVER);
-        SignalManager.Instance.ConnectSignalToFunction(OnScore, signals.ON_SCORE);
-        SignalManager.Instance.ConnectSignalToFunction(OnSceneReloading, signals.ON_SCENE_RELOAD);
+        SignalManager.Instance.ConnectToGameOverSignal(OnGameOver);
+        SignalManager.Instance.ConnectToScoreSignal(OnScore);
+        SignalManager.Instance.ConnectToSceneReloadSignal(OnSceneReloading);
     }
 
     private void OnSceneReloading()

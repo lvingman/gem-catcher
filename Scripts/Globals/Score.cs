@@ -26,8 +26,8 @@ public partial class Score : Node
 
     private void ConnectSignals()
     {
-        SignalManager.Instance.ConnectSignalToFunction(AddScore, signals.ON_SCORE);
-        SignalManager.Instance.ConnectSignalToFunction(OnSceneReload, signals.ON_SCENE_RELOAD);
+        SignalManager.Instance.ConnectToScoreSignal(AddScore);
+        SignalManager.Instance.ConnectToSceneReloadSignal(OnSceneReload);
     }
 
     private void OnSceneReload()

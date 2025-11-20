@@ -29,7 +29,7 @@ public partial class GlobalValues : Node2D
  
     private void ConnectSignals()
     {
-        SignalManager.Instance.ConnectSignalToFunction(IncreaseGemSpeed, signals.ON_SCORE);
+        SignalManager.Instance.ConnectToScoreSignal(IncreaseGemSpeed);
     }
 
     private void IncreaseGemSpeed()

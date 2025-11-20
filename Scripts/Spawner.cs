@@ -1,7 +1,5 @@
-using Godot;
-using System;
 using GemCatcher.Scripts;
-using GemCatcher.Scripts.Globals.Enums;
+using Godot;
 
 public partial class Spawner : Node2D
 {
@@ -24,6 +22,6 @@ public partial class Spawner : Node2D
     
     private void ConnectSignals()
     {
-        SignalManager.Instance.ConnectSignalToFunction(SpawnObject, signals.ON_SCORE);
+        SignalManager.Instance.ConnectToScoreSignal(SpawnObject);
     }
 }

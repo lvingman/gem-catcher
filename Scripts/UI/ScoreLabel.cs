@@ -13,7 +13,7 @@ public partial class ScoreLabel : Label
 
     private void ConnectSignals()
     {
-        SignalManager.Instance.ConnectSignalToFunction(UpdateScore, signals.ON_SCORE);
+        SignalManager.Instance.ConnectToScoreSignal(UpdateScore);
     }
 
     private void UpdateScore()

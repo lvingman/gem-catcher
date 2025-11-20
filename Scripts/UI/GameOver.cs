@@ -24,7 +24,7 @@ public partial class GameOver : Control
     private void ConnectSignals()
     {
         _tryAgainButton.Pressed += OnTryAgainButtonPressed;
-        SignalManager.Instance.ConnectSignalToFunction(OnGameOver, signals.ON_GAME_OVER);
+        SignalManager.Instance.ConnectToGameOverSignal(OnGameOver);
     }
 
     private void OnGameOver()
